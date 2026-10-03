@@ -1,0 +1,17 @@
+name: Alerta DevOps por Joel Benitez
+ on:
+   push:
+     branches:
+       - main
+  jobs:
+    notificar:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Enviar notificación
+         run | 
+          curl \
+          -H "Title: Alerta DevOps por Joel Benitez Github Actions - ITLA ELECTIVA 2" \
+          -H "priority: default" \
+          -H "Tags: devops, alert, github" \
+        -d "Se ha realizado un push en la rama main. Por parte de Joel Benitez 2025-1049" \
+            https://ntfy.sh/devops-itla
